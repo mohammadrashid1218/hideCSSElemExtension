@@ -1,0 +1,32 @@
+{
+
+  "manifest_version": 2,
+  "name": "elemHider",
+  "version": "1.0",
+
+  "description": "Hide/show various CSS elements with a shortcut.",
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["hideYoutube.js"]
+    },
+    {
+      "matches": ["*://*.twitter.com/*"],
+      "js": ["hideTwitter.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "commands": {
+    "toggle-feature": {
+      "suggested_key": { "default": "Ctrl+Shift+Y" },
+      "description": "Send a 'toggle-feature' event to the extension"
+    }
+  }
+
+
+}
